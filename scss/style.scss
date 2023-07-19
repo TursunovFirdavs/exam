@@ -1,0 +1,340 @@
+@import "reset";
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+// colors 
+$main-dark-color: #150C01;
+$main-light-color: #fff;
+$secondary-light-color: #DC780B;
+
+// fonts 
+$roboto:'Roboto', sans-serif;
+$philosopher:'Philosopher', sans-serif;
+
+
+@mixin font($color, $f-family, $f-size, $l-height, $l-space, $margin) {
+    color: $color;
+    font-family: $f-family;
+    font-size: $f-size;
+    line-height: $l-height;
+    letter-spacing: $l-space;
+    margin: $margin;
+}
+
+@mixin link($bg-color, $color, $padding, $margin) {
+    background-color: $bg-color;
+    color: $color;
+    padding: $padding;
+    margin: $margin;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: $roboto;
+    display: inline-block;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    .nav__left {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+        .nav__menu {
+            display: flex;
+            gap: 40px;
+            a {
+                text-decoration: none;
+                @include font($main-dark-color, $roboto, 16px, 19px, 0, 0)
+            }
+            a:hover {
+                color: $secondary-light-color;
+            }
+        }
+    }
+    .main__link {
+        @include link($secondary-light-color, $main-light-color, 14px 30px, 0)
+    }
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    .hero__content {
+        h1 {
+            font-weight: 700;
+            @include font($main-dark-color, $philosopher, 49px, 57px, 0, 0)
+        }
+        p {
+            width: 555px;
+            @include font($main-dark-color, $roboto, 16px, 24px, 0, 42px 0 50px)
+        }
+        a {
+            @include link($secondary-light-color, $main-light-color, 21px 40px, 0 30px 0 0)
+        }
+        a:hover {
+            background-color: $main-light-color;
+            color: $secondary-light-color;
+            border: 1px solid $secondary-light-color;
+        }
+        
+    }
+    .hero__img {
+        margin-right: -10px;
+    }
+}
+
+.features {
+    strong {
+        display: block;
+        text-align: center;
+        @include font($secondary-light-color, $roboto, 16px, 18px, 5px,auto)
+    }
+    h2 {
+        font-weight: 700;
+        text-align: center;
+        @include font($main-dark-color, $philosopher, 31px, 35px, 0, 7px 0 44px)
+    }
+    .features__card__wrapper {
+        display: flex;
+        justify-content: space-around;
+        .features__card {
+            text-align: center;
+            .features__card__img {
+                width: 88px;
+                height: 88px;
+                border-radius: 50%;
+                background-color: rgb(143, 166, 50, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+            }
+            h3 {
+                font-weight: 700;
+                @include font($main-dark-color, $philosopher, 25px, 24px, 0, 33px 0 15px 0)
+            }
+            p {
+                width: 300px;
+                @include font($main-dark-color, $roboto, 16px, 24px, 0, 0)
+            }
+        }
+    }
+}
+    .about-us {
+        margin: 140px auto 100px;
+        position: relative;
+        max-width: calc(557px + 558px + 325px);
+        .about__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+                border-radius: 35px;
+                position: relative;
+                z-index: 2;
+            }
+            strong {
+                @include font($secondary-light-color, $roboto, 16px, 24px, 5px, 0)
+            }
+            h2 {
+                width: 487px;
+                font-weight: 700;
+                @include font($main-dark-color, $philosopher, 32px, 40px, 0, 10px 0 30px)
+            }
+            p {
+                width: 487px;
+                @include font($main-dark-color, $roboto, 16px, 24px, 0, 0)
+            }
+            a {
+                @include link($secondary-light-color, $main-light-color, 12px 30px, 29px 0 0 0)
+            }
+        }
+    }
+
+    .about-us .extra__img {
+        position: absolute;
+        top: -200px;
+    }
+
+    .menu {
+        strong {
+            display: block;
+            text-align: center;
+            @include font($secondary-light-color, $roboto, 16px, 24px, 5px, 0)
+        }
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            @include font($main-dark-color, $philosopher, 32px, 24px, 0, 9px 0 25px )
+        }
+        .menu__text {
+            text-align: center;
+            width: 748px;
+            @include font($main-dark-color, $roboto, 16px, 24px, 0, auto)
+        }
+        a {
+            border: 1px solid rgb(220, 120, 11, 0.1);
+            @include link($main-light-color, $secondary-light-color, 12px 30px, 0 0 120px 500px)
+        }
+        a:hover {
+            background-color: $secondary-light-color;
+            color: $main-light-color;
+            transition: 0.2s;
+        }
+    }
+
+    .menu__card__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin: 60px 0 50px;
+        .menu__card {
+            border: 1px solid rgb(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border-top-left-radius: 75px;
+            max-width: 360px;
+            box-sizing: border-box;
+            img {
+                border-top-left-radius: 75px;
+                border-bottom-right-radius: 75px;
+            }
+            .menu__card__content {
+                padding: 25px;
+                .product-price {
+                    display: flex;
+                    justify-content: space-between;
+                    h3 {
+                        font-weight: 700;
+                        @include font($main-dark-color, $philosopher, 25px, 24px, 0, 0)
+                    }
+                }
+                p {
+                    
+                    width: 310px;
+                    @include font($main-dark-color, $roboto, 16px, 24px, 0, 20px 0)
+                }
+                .menu__img__wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    img {
+                        @include link($secondary-light-color, $main-light-color, 12px, 0)
+                    }
+                }
+            }
+        }
+    }
+
+    .take__away {
+        width: 1440px;
+        margin: auto;
+        background-color: #FBF1E7;
+        position: relative;
+        .take__away__content {
+            width: 555px;
+            margin: auto;
+            padding: 114px 638px 129px 247px;
+            strong {
+                @include font($secondary-light-color, $roboto, 16px, 24px, 5px, 0)
+            }
+            h2 {
+                font-weight: 700;
+                @include font($main-dark-color, $philosopher, 33px, 40px, 0, 5px 0 30px)
+            }
+            p {
+                opacity: 0.7;
+                @include font($main-dark-color, $roboto, 16px, 24px, 0, 0 0 39px 0)
+            }
+            a {
+                margin-right: 30px;
+            }
+        }
+        .take__away__extra {
+            position: absolute;
+            top: -65px;
+            right: 245px;
+        }
+    }
+
+    .contact {
+        max-width: 1440px;
+        margin: 100px auto 0;
+        background-color: rgb(220, 120, 11, 0.1);
+        .contact__content {
+            max-width: 750px;
+            margin: auto;
+            padding: 115px 0;
+            strong {
+                display: block;
+                text-align: center;
+                @include font($secondary-light-color, $roboto, 16px, 19px, 5px, 0)
+            }
+            h2 {
+                font-weight: 700;
+                text-align: center;
+                width: 749px;
+                @include font($main-dark-color, $philosopher, 31px, 40px, 0, 15px auto 46px)
+            }
+            form {
+                width: 100%;
+                display: flex;
+                border-radius: 10px;
+                background-color: #fff;
+                input {
+                    width: 600px;
+                    border: none;
+                    padding: 32px;
+                    border-radius: 10px;
+                    outline: none;
+                }
+                button {
+                    width: 150px;
+                    border: none;
+                    padding: 30px 57px;
+                    background-color: $secondary-light-color;
+                    color: $main-light-color;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: $main-dark-color;
+        max-width: 1440px;
+        margin: auto;
+        .footer__wrapper {
+            display: flex;
+            gap: 170px;
+            padding: 137px 0 100px;
+            .footer__menu {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                a {
+                    text-decoration: none;
+                    opacity: 0.7;
+                    @include font($main-light-color, $roboto, 14px, 16px, 0, 0)
+                }
+                .active {
+                    @include font($main-light-color, $roboto, 18px, 20px, 0, 0 0 10px 0)
+                }
+            }
+        }
+    }
+
+    
+
+
+
+
+
